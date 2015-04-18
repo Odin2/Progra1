@@ -25,7 +25,7 @@ public class Interfaz extends javax.swing.JFrame {
     /**
      * Creates new form CrearCounter
      */
-    private Counter counter;
+    private Counter counter; private Cliente Mod;
     public Interfaz() {
         initComponents();
         Menu.setVisible(false);
@@ -37,6 +37,7 @@ public class Interfaz extends javax.swing.JFrame {
         CrearCliente.setVisible(false);
         Mensajes.setVisible(false);
         Modificar1.setVisible(false);
+        Modificar2.setVisible(false);
     }
 
     /**
@@ -138,6 +139,25 @@ public class Interfaz extends javax.swing.JFrame {
         Modificar = new javax.swing.JButton();
         ErrMod = new javax.swing.JLabel();
         Modificar2 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        identificacion3 = new javax.swing.JLabel();
+        nombre3 = new javax.swing.JLabel();
+        correo3 = new javax.swing.JLabel();
+        telefono3 = new javax.swing.JLabel();
+        direccion3 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        fechaNacimiento3 = new javax.swing.JLabel();
+        identificacionT3 = new javax.swing.JTextField();
+        nombreT3 = new javax.swing.JTextField();
+        correoT3 = new javax.swing.JTextField();
+        telefonoT3 = new javax.swing.JTextField();
+        direccionT3 = new javax.swing.JTextField();
+        bCrearCliente3 = new javax.swing.JButton();
+        bAtrasCreaCliente3 = new javax.swing.JButton();
+        campoVacioCreaCliente3 = new javax.swing.JLabel();
+        SexoC3 = new javax.swing.JComboBox();
+        PaquetesT = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -229,7 +249,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(CounterLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel8)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         CounterLayout.setVerticalGroup(
             CounterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -925,17 +945,21 @@ public class Interfaz extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(IDmod, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
                     .addGroup(Modificar1Layout.createSequentialGroup()
-                        .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ErrMod)
-                            .addComponent(Volver))
+                        .addComponent(Volver)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Modificar)))
                 .addContainerGap())
+            .addGroup(Modificar1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ErrMod)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Modificar1Layout.setVerticalGroup(
             Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Modificar1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(4, 4, 4)
+                .addComponent(ErrMod)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(IDmod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -943,20 +967,182 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Volver)
                     .addComponent(Modificar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ErrMod)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel35.setText("Modificar Cliente");
+
+        identificacion3.setText("Identificacion: ");
+
+        nombre3.setText("Nombre: ");
+
+        correo3.setText("Correo: ");
+
+        telefono3.setText("Telefono: ");
+
+        direccion3.setText("Direccion: ");
+
+        jLabel36.setText("Sexo: ");
+
+        fechaNacimiento3.setText("Paquetes para subir de nivel:");
+
+        identificacionT3.setEditable(false);
+        identificacionT3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                identificacionT3ActionPerformed(evt);
+            }
+        });
+        identificacionT3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                identificacionT3KeyTyped(evt);
+            }
+        });
+
+        correoT3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correoT3ActionPerformed(evt);
+            }
+        });
+        correoT3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                correoT3KeyTyped(evt);
+            }
+        });
+
+        telefonoT3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                telefonoT3KeyTyped(evt);
+            }
+        });
+
+        direccionT3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                direccionT3ActionPerformed(evt);
+            }
+        });
+
+        bCrearCliente3.setText("Listo");
+        bCrearCliente3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCrearCliente3ActionPerformed(evt);
+            }
+        });
+
+        bAtrasCreaCliente3.setText("Atras");
+        bAtrasCreaCliente3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAtrasCreaCliente3ActionPerformed(evt);
+            }
+        });
+
+        campoVacioCreaCliente3.setForeground(new java.awt.Color(255, 51, 51));
+        campoVacioCreaCliente3.setText("Error: Ningun campo puede quedar vacio.");
+
+        SexoC3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Femenino" }));
+        SexoC3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SexoC3ActionPerformed(evt);
+            }
+        });
+
+        PaquetesT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PaquetesTActionPerformed(evt);
+            }
+        });
+        PaquetesT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                PaquetesTKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout Modificar2Layout = new javax.swing.GroupLayout(Modificar2);
         Modificar2.setLayout(Modificar2Layout);
         Modificar2Layout.setHorizontalGroup(
             Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Modificar2Layout.createSequentialGroup()
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(bAtrasCreaCliente3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bCrearCliente3))
+                    .addGroup(Modificar2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(identificacion3)
+                            .addComponent(nombre3)
+                            .addComponent(correo3)
+                            .addComponent(telefono3)
+                            .addComponent(direccion3)
+                            .addComponent(jLabel36)
+                            .addComponent(fechaNacimiento3))
+                        .addGap(135, 135, 135)
+                        .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(identificacionT3)
+                                    .addComponent(nombreT3)
+                                    .addComponent(correoT3)
+                                    .addComponent(telefonoT3)
+                                    .addComponent(direccionT3, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
+                                .addComponent(SexoC3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Modificar2Layout.createSequentialGroup()
+                                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(PaquetesT, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(Modificar2Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(campoVacioCreaCliente3)))
+                .addContainerGap())
+            .addGroup(Modificar2Layout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(jLabel35)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Modificar2Layout.setVerticalGroup(
             Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(Modificar2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(identificacion3)
+                    .addComponent(identificacionT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nombre3)
+                    .addComponent(nombreT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(correo3)
+                    .addComponent(correoT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(telefono3)
+                    .addComponent(telefonoT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(direccion3)
+                    .addComponent(direccionT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(SexoC3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fechaNacimiento3)
+                    .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel41)
+                        .addComponent(PaquetesT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38)
+                .addComponent(campoVacioCreaCliente3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGroup(Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bCrearCliente3)
+                    .addComponent(bAtrasCreaCliente3))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -990,10 +1176,10 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(Modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Modificar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1026,10 +1212,10 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(Modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Modificar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()))
         );
 
         pack();
@@ -1461,6 +1647,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
     Clientes.setVisible(false);
     Modificar1.setVisible(true);// TODO add your handling code here:
+    ErrMod.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
@@ -1484,14 +1671,116 @@ public class Interfaz extends javax.swing.JFrame {
     int aux = Integer.parseInt(IDmod.getText());
     for (Cliente i : cliente){
         if (i.getId() == aux){
+            Mod = i;
+            this.identificacionT3.setText(Integer.toString(Mod.getId()));
+            this.nombreT3.setText(Mod.getNombre());
+            this.correoT3.setText(Mod.getCorreo());
+            this.telefonoT3.setText(Integer.toString(Mod.getTelefono()));
+            this.direccionT3.setText(Mod.getDireccion());
+            this.PaquetesT.setText(Integer.toString(Mod.getPaquetes()));
+            campoVacioCreaCliente3.setVisible(false);
             Modificar2.setVisible(true);
             Modificar1.setVisible(false);
-            break;
+            return;
         }
     }
+    ErrMod.setText("Error: No se encuentra la identificacion ingresada");
+    ErrMod.setVisible(true);
     }
     // TODO add your handling code here:
     }//GEN-LAST:event_ModificarActionPerformed
+
+    private void identificacionT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_identificacionT3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_identificacionT3ActionPerformed
+
+    private void identificacionT3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_identificacionT3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_identificacionT3KeyTyped
+
+    private void correoT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoT3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_correoT3ActionPerformed
+
+    private void correoT3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_correoT3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_correoT3KeyTyped
+
+    private void telefonoT3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefonoT3KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telefonoT3KeyTyped
+
+    private void direccionT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionT3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_direccionT3ActionPerformed
+
+    private void bCrearCliente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrearCliente3ActionPerformed
+        String IDcliente = this.identificacionT3.getText();
+        String nombreCliente = this.nombreT3.getText();
+        String correoCliente =this.correoT3.getText();
+        String telefonoCliente = this.telefonoT3.getText();
+        String direccionCliente = this.direccionT3.getText();
+        String paquetes = this.PaquetesT.getText();
+        String fechaCliente = this.fechaNacimiento3.getText();
+        boolean sexocliente = false;
+        if (SexoC3.getSelectedItem() == "Masculino"){sexocliente = true;}
+        else if (SexoC3.getSelectedItem() == "Femenino"){sexocliente = false;}
+        if (IDcliente.isEmpty() || nombreCliente.isEmpty() || correoCliente.isEmpty() || telefonoCliente.isEmpty() || direccionCliente.isEmpty() || paquetes.isEmpty())
+        {
+            campoVacioCreaCliente3.setText("Error: Ningun campo puede quedar vacio.");
+            campoVacioCreaCliente3.setVisible(true);
+        }
+        else if(telefonoCliente.length() != 8){
+            campoVacioCreaCliente3.setText("Error: El numero de telefono debe tener 8 digitos.");
+            campoVacioCreaCliente3.setVisible(true);
+        }
+        else if(!isValidEmailAddress(correoCliente)){
+            campoVacioCreaCliente3.setText("Error: El formato del correo es incorrecto.");
+            campoVacioCreaCliente3.setVisible(true);
+        }
+        else
+        {
+            System.out.println(fechaCliente);
+            int paq = Integer.parseInt(paquetes);
+            int idc = Integer.parseInt(IDcliente);
+            int tel = Integer.parseInt(telefonoCliente);
+            campoVacioCreaCliente3.setVisible(false);
+            Mod.setCorreo(correoCliente);
+            Mod.setDireccion(direccionCliente);
+            Mod.setId(idc);
+            Mod.setNombre(nombreCliente);
+            Mod.setPaquetes(paq);
+            Mod.setSexo(sexocliente);
+            Mod.setTelefono(tel);
+            this.identificacionT3.setText("");
+            this.nombreT3.setText("");
+            this.correoT3.setText("");
+            this.telefonoT3.setText("");
+            this.direccionT3.setText("");
+            this.PaquetesT.setText("");
+            Modificar2.setVisible(false);
+            Menu.setVisible(true);
+            Mensajes.setVisible(true);
+            Mensajes.setText("Se han actualizado los datos del cliente: " + nombreCliente );
+            }
+            // TODO add your handling code here:
+    }//GEN-LAST:event_bCrearCliente3ActionPerformed
+
+    private void bAtrasCreaCliente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtrasCreaCliente3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bAtrasCreaCliente3ActionPerformed
+
+    private void SexoC3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexoC3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SexoC3ActionPerformed
+
+    private void PaquetesTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PaquetesTKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PaquetesTKeyTyped
+
+    private void PaquetesTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaquetesTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PaquetesTActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1551,12 +1840,14 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel Modificar2;
     private javax.swing.JLabel Nombre;
     private javax.swing.JTextField NombreT;
+    private javax.swing.JTextField PaquetesT;
     private javax.swing.JLabel Peso;
     private javax.swing.JTextField PesoT;
     private javax.swing.JPanel Recepcion;
     private javax.swing.JLabel Remitente;
     private javax.swing.JTextField RemitenteT;
     private javax.swing.JComboBox SexoC;
+    private javax.swing.JComboBox SexoC3;
     private javax.swing.JLabel Tema;
     private javax.swing.JTextField TemaT;
     private javax.swing.JComboBox TipoArticulo;
@@ -1565,20 +1856,30 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton Volver;
     private javax.swing.JTextField añoNacimientoT;
     private javax.swing.JButton bAtrasCreaCliente;
+    private javax.swing.JButton bAtrasCreaCliente3;
     private javax.swing.JButton bCrear;
     private javax.swing.JButton bCrearCliente;
+    private javax.swing.JButton bCrearCliente3;
     private javax.swing.JButton bSalir;
     private javax.swing.JButton bSalir1;
     private javax.swing.JLabel campoVacioCreaCliente;
+    private javax.swing.JLabel campoVacioCreaCliente3;
     private javax.swing.JLabel correo;
+    private javax.swing.JLabel correo3;
     private javax.swing.JTextField correoT;
+    private javax.swing.JTextField correoT3;
     private javax.swing.JTextField diaNacimientoT;
     private javax.swing.JLabel direccion;
+    private javax.swing.JLabel direccion3;
     private javax.swing.JTextField direccionT;
+    private javax.swing.JTextField direccionT3;
     private javax.swing.JLabel fechaNacimiento;
+    private javax.swing.JLabel fechaNacimiento3;
     private javax.swing.ButtonGroup grupoSexo;
     private javax.swing.JLabel identificacion;
+    private javax.swing.JLabel identificacion3;
     private javax.swing.JTextField identificacionT;
+    private javax.swing.JTextField identificacionT3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
@@ -1603,7 +1904,10 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1611,9 +1915,13 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField mesNacimientoT;
     private javax.swing.JLabel nombre;
+    private javax.swing.JLabel nombre3;
     private javax.swing.JTextField nombreT;
+    private javax.swing.JTextField nombreT3;
     private javax.swing.JLabel telefono;
+    private javax.swing.JLabel telefono3;
     private javax.swing.JTextField telefonoT;
+    private javax.swing.JTextField telefonoT3;
     private javax.swing.JTextField txtCantCasilleros;
     private javax.swing.JTextField txtCedulaJuridica;
     private javax.swing.JTextField txtDireccion;
