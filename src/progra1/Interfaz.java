@@ -1631,17 +1631,23 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void diaNacimientoTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_diaNacimientoTKeyTyped
         char car = evt.getKeyChar();
-        if ((car<'0' || car>'9')) evt.consume();    // TODO add your handling code here:        // TODO add your handling code here:
+        if ((car<'0' || car>'9')) evt.consume(); 
+        int limite=2;
+        if (diaNacimientoT.getText().length()== limite) evt.consume();// TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_diaNacimientoTKeyTyped
 
     private void mesNacimientoTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mesNacimientoTKeyTyped
         char car = evt.getKeyChar();
-        if ((car<'0' || car>'9')) evt.consume();    // TODO add your handling code here:        // TODO add your handling code here:
+        if ((car<'0' || car>'9')) evt.consume(); 
+        int limite=2;
+        if (mesNacimientoT.getText().length()== limite) evt.consume();// TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_mesNacimientoTKeyTyped
 
     private void añoNacimientoTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_añoNacimientoTKeyTyped
         char car = evt.getKeyChar();
-        if ((car<'0' || car>'9')) evt.consume();    // TODO add your handling code here:        // TODO add your handling code here:
+        if ((car<'0' || car>'9')) evt.consume();
+        int limite=4;
+        if (añoNacimientoT.getText().length()== limite) evt.consume();// TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_añoNacimientoTKeyTyped
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
