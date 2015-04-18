@@ -135,6 +135,7 @@ public class Interfaz extends javax.swing.JFrame {
         IDmod = new javax.swing.JTextField();
         Volver = new javax.swing.JButton();
         Modificar = new javax.swing.JButton();
+        ErrMod = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -902,6 +903,9 @@ public class Interfaz extends javax.swing.JFrame {
 
         Modificar.setText("Modificar");
 
+        ErrMod.setForeground(new java.awt.Color(204, 0, 51));
+        ErrMod.setText("jLabel21");
+
         javax.swing.GroupLayout Modificar1Layout = new javax.swing.GroupLayout(Modificar1);
         Modificar1.setLayout(Modificar1Layout);
         Modificar1Layout.setHorizontalGroup(
@@ -914,7 +918,9 @@ public class Interfaz extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(IDmod, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                     .addGroup(Modificar1Layout.createSequentialGroup()
-                        .addComponent(Volver)
+                        .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ErrMod)
+                            .addComponent(Volver))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Modificar)))
                 .addContainerGap())
@@ -930,7 +936,9 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Volver)
                     .addComponent(Modificar))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ErrMod)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1481,6 +1489,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField DescripcionT;
     private javax.swing.JCheckBox Documentacion;
     private javax.swing.JCheckBox Electronico;
+    private javax.swing.JLabel ErrMod;
     private javax.swing.JLabel ErrorRecepcionArtCampoVacio;
     private javax.swing.JCheckBox Fragil;
     private javax.swing.JLabel IDdestinatario;
