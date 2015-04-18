@@ -745,6 +745,23 @@ public class Interfaz extends javax.swing.JFrame {
                 añoNacimientoTActionPerformed(evt);
             }
         });
+        añoNacimientoT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                añoNacimientoTKeyTyped(evt);
+            }
+        });
+
+        diaNacimientoT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                diaNacimientoTKeyTyped(evt);
+            }
+        });
+
+        mesNacimientoT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                mesNacimientoTKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout CrearClienteLayout = new javax.swing.GroupLayout(CrearCliente);
         CrearCliente.setLayout(CrearClienteLayout);
@@ -1231,11 +1248,13 @@ public class Interfaz extends javax.swing.JFrame {
         String correoCliente =this.correoT.getText();
         String telefonoCliente = this.telefonoT.getText();
         String direccionCliente = this.direccionT.getText();
-        //String fechaCliente = this.FechaT.getText();
+        String diaNacimiento = this.diaNacimientoT.getText();
+        String mesNacimiento = this.mesNacimientoT.getText();
+        String añoNacimiento = this.añoNacimientoT.getText();
         boolean sexocliente = false;
         if (SexoC.getSelectedItem() == "Masculino"){sexocliente = true;}
         else if (SexoC.getSelectedItem() == "Femenino"){sexocliente = false;}
-        if (IDcliente.isEmpty() || nombreCliente.isEmpty() || correoCliente.isEmpty() || telefonoCliente.isEmpty() || direccionCliente.isEmpty() )
+        if (IDcliente.isEmpty() || nombreCliente.isEmpty() || correoCliente.isEmpty() || telefonoCliente.isEmpty() || direccionCliente.isEmpty() || diaNacimiento.isEmpty() || mesNacimiento.isEmpty() || añoNacimiento.isEmpty())
         {
             campoVacioCreaCliente.setText("Error: Ningun campo puede quedar vacio.");
             campoVacioCreaCliente.setVisible(true);
@@ -1250,16 +1269,20 @@ public class Interfaz extends javax.swing.JFrame {
         }
         else
         {
+            String fechaCliente=(diaNacimiento + '/' + mesNacimiento + '/' + añoNacimiento);
+            System.out.println(fechaCliente);
             int idc = Integer.parseInt(IDcliente);
             int tel = Integer.parseInt(telefonoCliente);
             campoVacioCreaCliente.setVisible(false);
-            //counter.getClientes().add(new Cliente(idc,nombreCliente,correoCliente,tel,direccionCliente,sexocliente,fechaCliente));
+            counter.getClientes().add(new Cliente(idc,nombreCliente,correoCliente,tel,direccionCliente,sexocliente,fechaCliente));
             this.identificacionT.setText("");
             this.nombreT.setText("");
             this.correoT.setText("");
             this.telefonoT.setText("");
             this.direccionT.setText("");
-            //this.FechaT.setText("");
+            this.diaNacimientoT.setText("");
+            this.mesNacimientoT.setText("");
+            this.añoNacimientoT.setText("");
             CrearCliente.setVisible(false);
             Menu.setVisible(true);
             Cliente aux = counter.getClientes().get(counter.getClientes().size() - 1);
@@ -1308,6 +1331,21 @@ public class Interfaz extends javax.swing.JFrame {
     private void añoNacimientoTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añoNacimientoTActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_añoNacimientoTActionPerformed
+
+    private void diaNacimientoTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_diaNacimientoTKeyTyped
+        char car = evt.getKeyChar();
+        if ((car<'0' || car>'9')) evt.consume();    // TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_diaNacimientoTKeyTyped
+
+    private void mesNacimientoTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mesNacimientoTKeyTyped
+        char car = evt.getKeyChar();
+        if ((car<'0' || car>'9')) evt.consume();    // TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_mesNacimientoTKeyTyped
+
+    private void añoNacimientoTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_añoNacimientoTKeyTyped
+        char car = evt.getKeyChar();
+        if ((car<'0' || car>'9')) evt.consume();    // TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_añoNacimientoTKeyTyped
     
     /**
      * @param args the command line arguments

@@ -1082,13 +1082,20 @@
         <Component class="javax.swing.JTextField" name="a&#xf1;oNacimientoT">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;oNacimientoTActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="a&#xf1;oNacimientoTKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="diaNacimientoT">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="diaNacimientoTKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel19">
         </Component>
         <Component class="javax.swing.JTextField" name="mesNacimientoT">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="mesNacimientoTKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
