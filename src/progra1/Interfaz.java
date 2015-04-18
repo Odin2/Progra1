@@ -35,6 +35,7 @@ public class Interfaz extends javax.swing.JFrame {
         campoVacioCreaCliente.setVisible(false);
         CrearCliente.setVisible(false);
         Mensajes.setVisible(false);
+        Modificar1.setVisible(false);
     }
 
     /**
@@ -129,6 +130,11 @@ public class Interfaz extends javax.swing.JFrame {
         diaNacimientoT = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         mesNacimientoT = new javax.swing.JTextField();
+        Modificar1 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        IDmod = new javax.swing.JTextField();
+        Volver = new javax.swing.JButton();
+        Modificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -366,6 +372,11 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         jButton6.setText("Modificar Existente");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Eliminar Cliente");
 
@@ -870,6 +881,58 @@ public class Interfaz extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Modificar1.setMaximumSize(new java.awt.Dimension(400, 400));
+        Modificar1.setPreferredSize(new java.awt.Dimension(400, 100));
+        Modificar1.setRequestFocusEnabled(false);
+
+        jLabel20.setText("Ingrese el ID del Cliente que desea modificar:");
+
+        IDmod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                IDmodKeyTyped(evt);
+            }
+        });
+
+        Volver.setText("Volver");
+        Volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverActionPerformed(evt);
+            }
+        });
+
+        Modificar.setText("Modificar");
+
+        javax.swing.GroupLayout Modificar1Layout = new javax.swing.GroupLayout(Modificar1);
+        Modificar1.setLayout(Modificar1Layout);
+        Modificar1Layout.setHorizontalGroup(
+            Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Modificar1Layout.createSequentialGroup()
+                .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Modificar1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IDmod, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                    .addGroup(Modificar1Layout.createSequentialGroup()
+                        .addComponent(Volver)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Modificar)))
+                .addContainerGap())
+        );
+        Modificar1Layout.setVerticalGroup(
+            Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Modificar1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(IDmod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Volver)
+                    .addComponent(Modificar))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -894,6 +957,11 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(CrearCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -920,6 +988,11 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(CrearCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -993,6 +1066,7 @@ public class Interfaz extends javax.swing.JFrame {
     Listo.setVisible(false);
     IDdestinatarioT.setVisible(false);
     IDdestinatario.setVisible(false);
+    
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1239,6 +1313,7 @@ public class Interfaz extends javax.swing.JFrame {
         CrearCliente.setVisible(false);
         Clientes.setVisible(true);
         campoVacioCreaCliente.setVisible(false);
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_bAtrasCreaClienteActionPerformed
 
@@ -1346,6 +1421,21 @@ public class Interfaz extends javax.swing.JFrame {
         char car = evt.getKeyChar();
         if ((car<'0' || car>'9')) evt.consume();    // TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_añoNacimientoTKeyTyped
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    Clientes.setVisible(false);
+    Modificar1.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
+    Modificar1.setVisible(false);
+    Menu.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_VolverActionPerformed
+
+    private void IDmodKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IDmodKeyTyped
+      char car = evt.getKeyChar();
+        if ((car<'0' || car>'9')) evt.consume();  // TODO add your handling code here:
+    }//GEN-LAST:event_IDmodKeyTyped
     
     /**
      * @param args the command line arguments
@@ -1395,9 +1485,12 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JCheckBox Fragil;
     private javax.swing.JLabel IDdestinatario;
     private javax.swing.JTextField IDdestinatarioT;
+    private javax.swing.JTextField IDmod;
     private javax.swing.JButton Listo;
     private javax.swing.JLabel Mensajes;
     private javax.swing.JPanel Menu;
+    private javax.swing.JButton Modificar;
+    private javax.swing.JPanel Modificar1;
     private javax.swing.JLabel Nombre;
     private javax.swing.JTextField NombreT;
     private javax.swing.JLabel Peso;
@@ -1411,6 +1504,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JComboBox TipoArticulo;
     private javax.swing.JComboBox TipoSobre;
     private javax.swing.JLabel Venta;
+    private javax.swing.JButton Volver;
     private javax.swing.JTextField añoNacimientoT;
     private javax.swing.JButton bAtrasCreaCliente;
     private javax.swing.JButton bCrear;
@@ -1449,6 +1543,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
