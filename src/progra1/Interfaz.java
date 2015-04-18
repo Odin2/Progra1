@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package progra1;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.accessibility.AccessibleContext;
@@ -136,6 +137,7 @@ public class Interfaz extends javax.swing.JFrame {
         Volver = new javax.swing.JButton();
         Modificar = new javax.swing.JButton();
         ErrMod = new javax.swing.JLabel();
+        Modificar2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -902,6 +904,11 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         Modificar.setText("Modificar");
+        Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarActionPerformed(evt);
+            }
+        });
 
         ErrMod.setForeground(new java.awt.Color(204, 0, 51));
         ErrMod.setText("jLabel21");
@@ -916,7 +923,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(IDmod, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                        .addComponent(IDmod, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
                     .addGroup(Modificar1Layout.createSequentialGroup()
                         .addGroup(Modificar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(ErrMod)
@@ -938,7 +945,18 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(Modificar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ErrMod)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout Modificar2Layout = new javax.swing.GroupLayout(Modificar2);
+        Modificar2.setLayout(Modificar2Layout);
+        Modificar2Layout.setHorizontalGroup(
+            Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        Modificar2Layout.setVerticalGroup(
+            Modificar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -971,6 +989,11 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(Modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Modificar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1001,6 +1024,11 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(Modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Modificar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -1444,6 +1472,26 @@ public class Interfaz extends javax.swing.JFrame {
       char car = evt.getKeyChar();
         if ((car<'0' || car>'9')) evt.consume();  // TODO add your handling code here:
     }//GEN-LAST:event_IDmodKeyTyped
+
+    private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
+    List<Cliente> cliente = counter.getClientes();
+    if (IDmod.getText().isEmpty()){
+        ErrMod.setText("Error: debe ingresar Identificacion");
+        ErrMod.setVisible(true);
+    }
+    else{
+    ErrMod.setVisible(false);
+    int aux = Integer.parseInt(IDmod.getText());
+    for (Cliente i : cliente){
+        if (i.getId() == aux){
+            Modificar2.setVisible(true);
+            Modificar1.setVisible(false);
+            break;
+        }
+    }
+    }
+    // TODO add your handling code here:
+    }//GEN-LAST:event_ModificarActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1500,6 +1548,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel Menu;
     private javax.swing.JButton Modificar;
     private javax.swing.JPanel Modificar1;
+    private javax.swing.JPanel Modificar2;
     private javax.swing.JLabel Nombre;
     private javax.swing.JTextField NombreT;
     private javax.swing.JLabel Peso;
